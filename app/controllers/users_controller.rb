@@ -14,10 +14,14 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
   
+  def index
+    @users = User.find(params[:id])
+  end
+
   private
-  
+
   def user_params
-    params.require(:user).permit(:name, :profile_image)
+    params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
 end
