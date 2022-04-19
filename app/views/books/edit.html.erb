@@ -1,4 +1,5 @@
-<div style="text-align:center;">
+<div class="row">
+<div class="col-md-6 offset-md-3">
   <h1>Editing Book</h1>
   <% if @book.errors.any? %>
    <%= @book.errors.count %>errors prohibited this book from being saved:
@@ -10,15 +11,15 @@
  <% end %>
  <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 
-   <p>Title</p> </br>
+   <p>Title</p>
    <%= f.text_field :title %> </br>
 
-   <p>Option</p> </br>
+   <p>Option</p>
    <%= f.text_area :body %> </br>
-   <%= f.submit 'Update Book' %></br>
+   <%= f.submit "Update Book", class:"btn btn-success" %></br>
    <%= link_to "Show", book_path(@book.id) %>
    |
-   <%= link_to 'Back', books_path %>
+   <%= link_to "Back", books_path %>
  <% end %>
-
+</div>
 </div>

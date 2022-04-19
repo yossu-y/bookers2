@@ -1,4 +1,4 @@
-<<div class="container">
+<div class="container">
   <div class="row">
 
   　<div class="col-md-3">
@@ -11,18 +11,20 @@
       <h1>Book detail</h1>
       <table class="table">
         <tr>
-          <th><%= image_tag @user.get_profile_image(30,30), fallback: "no_image.jpg" %></th>
-          <th><%= link_to @user.name, user_path(@user) %></th>
-          <th><%= @book.title %></th>
-          <th><%= @book.body %></th>
+          <td><%= image_tag @user.get_profile_image(30,30), fallback: "no_image.jpg" %></td>
+          <td><%= link_to @user.name, user_path(@user) %></td>
+          <td><%= @book.title %></td>
+          <td><%= @book.body %></td>
           <% if @book.user_id == current_user.id %>
-            <th><%= link_to "Edit", edit_book_path(@book), class:"btn btn-success" %></th>
-            <th><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %></th>
+            <td><%= link_to "Edit", edit_book_path(@book), class:"btn btn-success" %></td>
+            <td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか？"}, class:"btn btn-danger" %></td>
           <% end %>
         </tr>
       </table>
     </div>
-    
+
   </div>
 </div>
+
+
 
