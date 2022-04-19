@@ -1,6 +1,6 @@
+<h2>User info</h2>
 <div class="col-md-3">
 <table class="table table-user">
-  <h2>User info</h2>
   <thead>
     <tr>
       <%= image_tag @user.get_profile_image(100,100), fallback: "no_image.jpg" %>
@@ -8,11 +8,11 @@
   </thead>
   <tbody>
     <tr>
-      <th>Name</th>
+      <th>name</th>
       <th><%= user.name %></th>
     </tr>
     <tr>
-      <th>Introduction</th>
+      <th>introduction</th>
       <th><%= user.introduction %></th>
     </tr>
   </tbody>
