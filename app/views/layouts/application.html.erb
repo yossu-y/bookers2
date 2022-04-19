@@ -12,13 +12,13 @@
   </head>
 
    <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg navbar-light">
+    <header class="shadow-sm bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
 
         <nav class="nav navbar-left">
-          <a class="navbar-brand p-3" href="/">
-            <span>Bookers</span>
+          <a class="navbar-brand" href="/">
+            <span class="text-white">Bookers</span>
           </a>
         </nav>
 
@@ -31,48 +31,72 @@
 
             <% if user_signed_in? %>
 
-              <li class="nav-item">
-                <i class="fas fa-home" aria-hidden="true"></i>
-                <%= link_to "Home", root_path, class: "nav-link text-dark" %>
+              <li class="nav-link text-light">
+                <%= link_to root_path, class:"nav-link" do %>
+                <p><i class="fas fa-home" style="color:white;" aria-hidden="true"></i>
+                <span class="text-white">Home</span>
+                <P>
+                <% end %>
               </li>
 
-              <li class="nav-item">
-                <i class="fas fa-users" aria-hidden="true"></i>
-                <%= link_to "Users", users_path, class:"nav-link text-dark" %>
+              <li class="nav-link text-light">
+                <%= link_to users_path, class:"nav-link" do %>
+                <p><i class="fas fa-users" style="color:white;" aria-hidden="true"></i>
+                <span class="text-white">Users</span>
+                </p>
+                <% end %>
               </li>
 
-              <li class="nav-item">
-                <i class="fas fa-book-open" aria-hidden="true"></i>
-                <%= link_to "Books", books_path, class:"nav-link text-dark" %>
+              <li class="nav-link text-light">
+                <%= link_to books_path, class:"nav-link" do %>
+                <p><i class="fas fa-book-open" style="color:white;" aria-hidden="true"></i>
+                <span class="text-white">Books</span>
+                </p>
+                <% end %>
               </li>
 
-              <li class="nav-item">
-                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-link text-dark" %>
+              <li class="nav-link text-light">
+                <%= link_to destroy_user_session_path, method: :delete, class:"nav-link" do %>
+                <p><i class="fas fa-sign-out-alt" style="color:white;" aria-hidden="true"></i>
+                <span class="text-white">Log out</span>
+                </p>
+                <% end %>
               </li>
 
             <% else %>
 
-              <li class="nav-item">
-                <i class="fas fa-home" aria-hidden="true"></i>
-                <%= link_to "Home", root_path, class:"nav-link text-dark" %>
+              <li class="nav-litem">
+                <%= link_to root_path, class:"nav-link" do %>
+                <p><i class="fas fa-home" style="color:white;" aria-hidden="true"></i>
+                <span class="text-white">Home</span>
+                </p>
+                <% end %>
               </li>
 
-              <li class="nav-item">
-                <i class="fas fa-link" aria-hidden="true"></i>
-                <%= link_to "About", about_path, class:"nav-link text-dark" %>
+              <li class="nav-litem">
+                <%= link_to about_path, class:"nav-link" do %>
+                <p><i class="fas fa-link" style="color:white;" aria-hidden="true"></i>
+                <span class="text-white">About</span>
+                </p>
+                <% end %>
               </li>
 
-              <li class="nav-item">
-                <i class="fas fa-user-plus" aria-hidden="true"></i>
-                <%= link_to "Sign up", new_user_registration_path, class:"nav-link text-dark" %>
+              <li class="nav-link text-light">
+                <%= link_to new_user_registration_path, class:"nav-link" do %>
+                <p><i class="fas fa-user-plus" style="color:white;" aria-hidden="true"></i>
+                <span class="text-white">Sign up</span>
+                </p>
+                <% end %>
               </li>
 
-              <li class="nav-item">
-                <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
-                <%= link_to "Log in", new_user_session_path, class:"nav-link text-dark" %>
-                </i>
+              <li class="nav-link text-light">
+                <%= link_to new_user_session_path, class:"nav-link" do %>
+                <p><i class="fas fa-sign-in-alt" style="color:white;" aria-hidden="true"></i>
+                <span class="text-white"> Log in</span>
+                </p>
+                <% end %>
               </li>
+
             <% end %>
           </ul>
         </div>
