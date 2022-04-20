@@ -105,11 +105,7 @@
     </header>
 
     <main>
-      <!--<p class="notice"><%= notice %></p>-->
-      <!--<div class="container px-5 px-sm-0">-->
-        <!--<div class="row">-->
-        <!--</div>-->
-      <!--</div>-->
+      <%= flash[:notice] if flash[:notice] %>
       <%= yield %>
     </main>
 
